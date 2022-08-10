@@ -1,5 +1,5 @@
 /*
-Theme Name: Bagel
+Theme Name: Nuevo
 Author: Alejandro Navarro
 Description: Simple, functional theme for a cafe or a restaurant
 Requires at least: 5.0
@@ -71,6 +71,7 @@ h1 a span {
   text-transform: uppercase;
   font-weight: bold;
   color: rgb(106 174 51);
+  color: rgb(91 151 43);
 }
 
 h1 a span::first-letter {
@@ -174,6 +175,7 @@ h1 a span+div {
   color: rgb(106 174 51);
   color: rgb(255 213 79);
   color: rgb(183 142 9);
+  color: rgba(130, 100, 5, 1);
   font-weight: bold;
   padding-top: 0.2em;
   text-align: center;
@@ -248,13 +250,16 @@ a.order {
 /**** Basic Page Template Styling ***/
 
 .about_page_pics {
-  display: inline-block;
+  display: flex;
 }
+
+
 
 .about_page_pics div {
   height: auto;
-  width: 33%;
-  display: inline-block;
+  flex: 1 1 0;
+  /* width: 33%; */
+  /* display: inline-block; */
 }
 
 .about_page_pics div img {
@@ -321,7 +326,9 @@ h2.menu_section {
   margin: 0 auto;
   font-size: .9em;
   border-radius: 10px;
-  background-color: rgba(243, 243, 243, .5);
+  /* background-color: rgba(243, 243, 243, .5);
+  background-color: #949494; */
+  border: solid 5px rgb(106, 174, 51);
   line-height: 2;
 }
 
@@ -330,23 +337,30 @@ h2.menu_section {
 .intro_copy p a,
 .intro_copy p strong {
   /* width: 71%; */
-  margin: 1% auto;
+  color: #000;
   font-size: 1.1rem;
+  margin: 1% auto;
   text-align: center;
   text-decoration: none;
 }
 
 .intro_copy a {
-  color: #50b200;
+  color: #000;
   font-weight: bold;
 }
 
 /*** Footer ***/
 footer {
-  background-color: rgba(106, 174, 51, .75);
-  color: #000;
+  /* background-color: rgba(106, 174, 51, .5); */
+  background-color: rgb(188 212 163);
+  /* color: #000; */
+  color: #171616;
   top: 100vh;
   position: sticky;
+}
+
+footer * {
+  color: #000;
 }
 
 .footer_wrap {
@@ -359,7 +373,7 @@ footer {
   /* border: solid 1px; */
 }
 
-.f-div h4 {
+.f-div h2 {
   display: inline-block;
   border-bottom: solid 1px;
   margin-top: 25px;
@@ -370,7 +384,7 @@ footer {
 
 iframe {
   border: solid 5px rgb(255 213 79);
-  height: 250px;
+  height: auto;
   margin-top: 25px;
   width: 60%;
 }
@@ -382,13 +396,17 @@ h5 {
   text-align: center;
 }
 
-h5.ph_credit {
+p.ph_credit {
   background-color: #fff;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding-top: 1%;
+}
+
+p.ph_credit a {
+  margin-left: 5px;
 }
 
 .social ul {
@@ -400,125 +418,47 @@ h5.ph_credit {
   width: 30px;
 }
 
+@media screen and (max-width: 960px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
 
-/*** Footer ***/
-/* 
-footer {
-  height: 50vh;
-  background-color: rgb(225, 195, 232);
-  padding-top: 2%;
+  .main_header {
+    margin-top: 15%;
+  }
+
+  .main nav li {
+    display: block;
+    margin: 5px 0;
+  }
+
+  .current_page_item a {
+    /* color: rgba(100, 149, 237, 1); */
+    padding-bottom: 0;
+    border-bottom: solid 2px;
+  }
+
+  .menu_sec,
+  .menu_head {
+    grid-template-columns: 1fr;
+  }
+
+  .menu_head span {
+    display: none;
+  }
+
+  .intro_copy,
+  .intro_copy p {
+    line-height: 1.5;
+    width: 100%;
+  }
+
+  .footer_wrap {
+    display: block;
+  }
+
+  p.ph_credit {
+    margin-bottom: 0;
+  }
 }
-
-.footer_wrap_out {
-  background-color: rgb(231, 193, 235);
-  background-color: rgb(255 213 79);
-  background-color: rgb(230 238 156);
-  background-color: rgba(106, 174, 51, .75);
-}
-
-.footer_wrap_in {
-  display: flex;
-  flex-direction: row;
-  height: 40vh;
-  margin: 2% auto;
-  width: 84%;
-}
-
-.footer_wrap_in>div {
-  border: solid 1px black;
-  padding: 2% 0;
-  width: 33%;
-}
-
-.footer_address h4 {
-  margin-top: 0;
-}
-
-h4 a span {
-  font-size: 1.2em;
-  font-weight: bolder;
-}
-
-h4 a div {
-  font-weight: lighter;
-}
-
-
-div.hours {
-  margin: 0 3%;
-}
-
-div.map {
-  margin-left: -1%;
-}
-
-iframe {
-  border: solid 10px white;
- margin-left: 4.5%; 
-width: 75%;
-height: 100%;
-}
-
-© .footer_wrap_in>div ul li {
-  list-style: none;
-}
-
-.footer_address img {
-  height: auto;
-  width: 47%;
-}
-
-.footer_address p {
-  line-height: 1.6rem;
-}
-
-.footer_address a {
-  text-decoration: none;
-}
-
-h5.ph_credit {
-  padding-bottom: 25px;
-}
-
-h5.ph_credit,
-h5.ph_credit a {
-  text-align: center;
-  font-size: .8rem;
-  font-weight: normal;
-  text-decoration: none;
-}
-
-div.hours ul {
-  margin-left: 0;
-  padding-left: 0;
-}
-
-span.day {
-  font-weight: bold;
-  color: #666;
-}
-
-.hours h4 {
-  margin: 0;
-}
-
-.hours li {
-  list-style: none;
-  line-height: 2rem;
-}
-
-nav.social ul {
-  display: flex;
-  justify-content: flex-start;
-  padding-inline-start: 0;
-}
-
-nav.social li {
-  list-style: none;
-}
-
-nav.social li img {
-  width: 25px;
-}
-
-*/
